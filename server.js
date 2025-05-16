@@ -4,6 +4,7 @@ const cDB= require('./config/db');
 require('dotenv').config();
 const app = express();
 const userRouter = require('./routes/userrouter');
+const productRouter = require('./routes/productrouter');
 
 cDB();
 
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: true}))
 
 
 app.use('/api/',userRouter);
+app.use('/api/', productRouter);
 
 
 app.listen(PORT , Host , () =>{

@@ -6,8 +6,8 @@ const productSchema = new mongoose.Schema({
   description: String,
   images: [String],
   price: Number,
-  stock: Number,
-  category: { type: Schema.Types.ObjectId, ref: 'Category' },
+  inStock: Boolean,
+  category: { type:mongoose.Schema.Types.ObjectId, ref: 'Category' },
   tags: [String],
   brand: String,
   isPublished: { type: Boolean, default: true }
